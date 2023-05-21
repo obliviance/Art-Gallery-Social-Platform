@@ -1,0 +1,36 @@
+doctype html
+html(lang="en")
+    head
+        title Profile
+    body
+        include ../partials/headers
+        h2 Username 
+        p=user.username
+        h2 Reviews
+        each val in user.reviews 
+            p val 
+        h2 Liked Artworks
+        each val in user.likedArtworks 
+            p val 
+        h2 Following
+        each val in user.following 
+            p val 
+        h2 Joined Workshops
+        each val in user.joinedWorkshops 
+            p val 
+        if user.upgrade 
+            h2 Created Workshops
+            each val in user.createdWorkshops 
+                p val 
+            h2 Created Artworks
+            each val in user.artworks
+                p val 
+            h2 Go back to Patron?
+            button#downgrade Downgrade
+        else 
+            h4 Become an Artist?
+            button#upgrade Upgrade
+        script(src="../updateProfile.js")
+
+        
+            

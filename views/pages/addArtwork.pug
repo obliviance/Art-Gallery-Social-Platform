@@ -1,0 +1,31 @@
+doctype html
+html(lang="en") 
+    title Add a new Artwork
+    body 
+        include ../partials/headers
+        h1 Add a new Artwork
+        div#error(style="color:red")
+        p
+            | Name: 
+            input(type='text', id='name')
+            br
+            |          Artist: 
+            input(type='text', id='artist')
+            br
+            |          Year: 
+            input(type='number', id='year')
+            br
+            |          Category: 
+            input(type='text', id='category')
+            br
+            |          Medium: 
+            input(type='text', id='medium')
+            br
+            |          Description: 
+            input(type='text', id='description')
+            br
+            |          Image URL: 
+            input(type='text', id='image')
+            br
+            input(type='submit', id='addArtwork' value='Submit')
+            script(src="../addArtwork.js")

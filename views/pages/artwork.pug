@@ -1,0 +1,37 @@
+doctype html
+html(lang="en")
+    head
+        title=artwork.name
+    body
+        include ../partials/headers
+        h1=artwork.name
+        img(src=artwork.image)
+        h3 Artist 
+        p=artwork.artist 
+        h3 Year 
+        p=artwork.year 
+        h3 Category 
+        p=artwork.category 
+        h3 Medium 
+        p=artwork.medium 
+        h3 Description 
+        p=artwork.description
+        h3 Likes 
+        - let likesNum = artwork.likes.length
+        span=likesNum + "❤️"
+        br
+        br
+        button#likeArt Like
+        h3 Reviews 
+        if artwork.reviews.length < 1
+            p No reviews yet. Be the first! 
+        else 
+            each val in artwork.reviews 
+                p=val 
+        h4 Review this artwork
+        textarea#newReview(name="", cols="30", rows="10")
+        br
+        input(type="submit" id="reviewButton" value="Submit")
+        script(src="../updateArtwork.js")
+        
+            

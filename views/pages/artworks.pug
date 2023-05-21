@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+    title Gallery
+    body
+        include ../partials/headers
+        h1 Artworks
+        style.
+            #row {
+                display: flex;
+            }
+            .column {
+                flex: 50%;
+            }
+        div#row
+            div.column
+                each artwork in artworks
+                    a(href="/artwork/" + artwork._id) #{artwork.name} 
+                    input(type='submit', id=artwork._id class="deleteButton" value="Remove Artwork")
+                    br
+                script(src="../deleteArtwork.js")
+            div.column
+                
